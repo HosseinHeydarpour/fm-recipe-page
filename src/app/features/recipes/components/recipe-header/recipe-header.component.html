@@ -2,12 +2,12 @@
   @if (recipe() && isImageLoaded()) {
   <div class="relative w-full">
 
-    <div class="md:px-4 md:py-4  overflow-hidden">
+    <div class="md:px-6 md:py-6  overflow-hidden">
       @if(imageNotFound()) {
-      <img class="h-72 w-full object-cover transition-opacity duration-300 md:overflow-hidden md:rounded-xl"
+      <img class="h-72 w-full object-cover transition-opacity duration-300 md:overflow-hidden md:rounded-md"
         [src]="imageSrc()" [alt]="recipe().title" />
       } @else {
-      <img class="h-72 w-full object-cover transition-opacity duration-300 md:overflow-hidden md:rounded-xl"
+      <img class="h-72 w-full object-cover transition-opacity duration-300 md:overflow-hidden md:rounded-md"
         [src]="recipe().image_url" [alt]="recipe().title" />
       }
 
@@ -16,7 +16,7 @@
 
 
     <div class="pr-6 pl-6">
-      <h1 class="font-young text-stone-900  mt-8 text-3xl font-normal leading-tight">
+      <h1 class="font-young text-stone-900  mt-8 text-3xl font-normal leading-tight md:mt-2">
         {{ recipe().title }}
       </h1>
 
@@ -33,11 +33,11 @@
   <div class="w-full">
     <div class="md:px-4 md:py-4  overflow-hidden">
 
-      <div class="h-72 w-full bg-stone-100 animate-pulse  md:rounded-xl "></div>
+      <div class="h-72 w-full bg-stone-100 animate-pulse  md:rounded-md "></div>
     </div>
 
     <div class="pr-6 pl-6">
-      <div class="h-16 w-3/4 bg-stone-100 animate-pulse   mt-8"></div>
+      <div class="h-16 w-3/4 bg-stone-100 animate-pulse   mt-8 md:mt-2"></div>
 
       <div class="h-24 w-5/6 bg-stone-100 animate-pulse   mt-8"></div>
     </div>
