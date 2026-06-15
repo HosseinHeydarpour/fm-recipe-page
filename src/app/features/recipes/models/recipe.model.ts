@@ -9,4 +9,5 @@ export interface Recipe {
 	servings: number;
 	cooking_time: number;
 	ingredients: Ingredient[];
+	description?: string;
 }

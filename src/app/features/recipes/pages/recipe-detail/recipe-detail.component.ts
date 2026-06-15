@@ -1,12 +1,13 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { switchMap } from 'rxjs';
+import { NutritionTableComponent } from '../../components/nutrition-table/nutrition-table.component';
+import { PreparationTimeComponent } from '../../components/preparation-time/preparation-time.component';
 import { RecipeHeaderComponent } from '../../components/recipe-header/recipe-header.component';
+import { RecipeSectionComponent } from '../../components/recipe-section/recipe-section.component';
+import { MOCK_RECIPE } from '../../data-access/recipe.mock';
 import { RecipeService } from '../../data-access/recipe.service';
 import { Recipe } from '../../models/recipe.model';
 import { RecipeSummary } from '../../models/recipeSummary.model';
-import { switchMap } from 'rxjs';
-import { PreparationTimeComponent } from '../../components/preparation-time/preparation-time.component';
-import { RecipeSectionComponent } from '../../components/recipe-section/recipe-section.component';
-import { NutritionTableComponent } from '../../components/nutrition-table/nutrition-table.component';
 
 @Component({
 	selector: 'app-recipe-detail',
@@ -25,7 +26,13 @@ export class RecipeDetailComponent implements OnInit {
 	recipes: RecipeSummary[] = [];
 	recipe!: Recipe;
 
+	requestFailed = signal(false);
+
 	ngOnInit(): void {
+		this.getARandomRecipe();
+	}
+
+	getARandomRecipe() {
 		this.recipeService
 			.getRecipes()
 			.pipe(
@@ -46,7 +53,11 @@ export class RecipeDetailComponent implements OnInit {
 					this.recipe = fullRecipeDetail; // Loaded asynchronously!
 					console.log('Recipe loaded securely:', this.recipe);
 				},
-				error: (err) => console.error('Stream Pipeline Error:', err),
+				error: (err) => {
+					this.requestFailed.set(true);
+					this.recipe = MOCK_RECIPE; // Fallback to mock data
+					console.error('Stream Pipeline Error:', err);
+				},
 			});
 	}
 }

@@ -34,6 +34,6 @@
   }
 
   @if (recipe()) {
-  <img class="hidden" [src]="recipe().image_url" (load)="isImageLoaded.set(true)" />
+  <img class="hidden" [src]="recipe().image_url" (load)="isImageLoaded.set(true)" (error)="handleImageError()" />
   }
 </div>
