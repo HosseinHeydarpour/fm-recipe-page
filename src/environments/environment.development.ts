@@ -1,4 +1,5 @@
 export const environment = {
 	production: false,
 	apiKey: 'de24e9b6-0eac-43f2-a497-9d9a787e7d24',
+	apiUrl: 'https://forkify-api.jonas.io/api/v2/recipes',
 };
