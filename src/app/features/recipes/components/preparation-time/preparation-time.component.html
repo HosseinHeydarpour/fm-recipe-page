@@ -1,14 +1,43 @@
-<div class="bg-rose-50 p-4 rounded-md mt-8 mb-2 ml-4 mr-4">
-  <h3 class="text-lg font-semibold mb-2 text-rose-800">Preparation Time</h3>
-  <ul>
+<div class="bg-rose-50 p-4 rounded-md mt-8 mb-2 ml-6 mr-6">
+  <h3 class="text-lg font-bold mb-3 text-rose-800">Preparation time</h3>
+
+  <ul class="!list-disc pl-5 space-y-2 text-stone-600 font-outfit marker:text-rose-800">
+    @if(recipe()) {
     <li>
-      <p class="text-gray-700">{{recipe().cooking_time}} minutes</p>
+      <p><strong class="text-stone-900 pl-4">Total:</strong> Approximately {{recipe().cooking_time}} minutes</p>
     </li>
     <li>
-      <p class="text-gray-700">{{recipe().cooking_time - 10}} minutes</p>
+      <p><strong class="text-stone-900 pl-4">Preparation:</strong> {{recipe().cooking_time - 10}} minutes</p>
     </li>
     <li>
-      <p class="text-gray-700">{{recipe().cooking_time - 5}} minutes</p>
+      <p><strong class="text-stone-900 pl-4">Cooking:</strong> {{recipe().cooking_time - 5}} minutes</p>
     </li>
+
+    } @else {
+
+
+    <li class="">
+      <p class="flex items-center gap-2 pl-4">
+        <strong class="text-stone-900">Total:</strong>
+        <span class="inline-block w-40 h-6 bg-rose-200/60 animate-pulse rounded"></span>
+      </p>
+    </li>
+
+    <li class="">
+      <p class="flex items-center gap-2 pl-4">
+        <strong class="text-stone-900">Preparation:</strong>
+        <span class="inline-block w-40 h-6 bg-rose-200/60 animate-pulse rounded"></span>
+      </p>
+    </li>
+
+    <li class="">
+      <p class="flex items-center gap-2 pl-4">
+        <strong class="text-stone-900">Cooking:</strong>
+        <span class="inline-block w-40 h-6 bg-rose-200/60 animate-pulse rounded"></span>
+      </p>
+    </li>
+
+    }
   </ul>
+
 </div>
