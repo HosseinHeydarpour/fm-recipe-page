@@ -2,3 +2,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 1. Register Young Serif (Headers) */
+@font-face {
+	font-family: 'Young Serif';
+	src: url('/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* 2. Register Outfit (Body Text & Metadata) */
+@font-face {
+	font-family: 'Outfit';
+	src: url('/fonts/outfit/static/Outfit-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Outfit';
+	src: url('/fonts/outfit/static/Outfit-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Outfit';
+	src: url('/fonts/outfit/static/Outfit-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+}

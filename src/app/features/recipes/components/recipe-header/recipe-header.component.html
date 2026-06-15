@@ -1,0 +1,26 @@
+<div>
+  @if (recipe() && isImageLoaded()) {
+  <div class="relative w-full">
+
+    <img class="h-72 w-full object-cover transition-opacity duration-300" [src]="recipe().image_url"
+      [alt]="recipe().title" />
+
+    <h1 class="font-young text-stone-900 pl-8 pr-6 mt-8 text-3xl font-normal leading-tight">
+      {{ recipe().title }}
+    </h1>
+
+  </div>
+  } @else {
+
+  <div class="w-full">
+    <div class="h-72 w-full bg-stone-100 animate-pulse "></div>
+
+    <div class="h-8 w-3/4 bg-stone-100 animate-pulse  ml-8 mt-8"></div>
+  </div>
+
+  }
+
+  @if (recipe()) {
+  <img class="hidden" [src]="recipe().image_url" (load)="isImageLoaded.set(true)" />
+  }
+</div>
