@@ -15,8 +15,6 @@ export class RecipeHeaderComponent {
 	imageNotFound = signal(false);
 
 	handleImageError() {
-		console.log('triggered');
-
 		this.imageNotFound.set(true);
 
 		// Fallback to a local asset placeholder if Heroku fails

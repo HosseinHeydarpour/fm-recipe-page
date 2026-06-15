@@ -51,12 +51,10 @@ export class RecipeDetailComponent implements OnInit {
 			.subscribe({
 				next: (fullRecipeDetail) => {
 					this.recipe = fullRecipeDetail; // Loaded asynchronously!
-					console.log('Recipe loaded securely:', this.recipe);
 				},
 				error: (err) => {
 					this.requestFailed.set(true);
 					this.recipe = MOCK_RECIPE; // Fallback to mock data
-					console.error('Stream Pipeline Error:', err);
 				},
 			});
 	}
