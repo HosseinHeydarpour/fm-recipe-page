@@ -2,8 +2,11 @@
   @if (recipe() && isImageLoaded()) {
   <div class="relative w-full">
 
-    <img class="h-72 w-full object-cover transition-opacity duration-300" [src]="recipe().image_url"
-      [alt]="recipe().title" />
+    <div class="md:px-4 md:py-4  overflow-hidden">
+      <img class="h-72 w-full object-cover transition-opacity duration-300 md:overflow-hidden md:rounded-xl"
+        [src]="recipe().image_url" [alt]="recipe().title" />
+    </div>
+
 
     <div class="pr-6 pl-6">
       <h1 class="font-young text-stone-900  mt-8 text-3xl font-normal leading-tight">
@@ -21,7 +24,10 @@
   } @else {
 
   <div class="w-full">
-    <div class="h-72 w-full bg-stone-100 animate-pulse "></div>
+    <div class="md:px-4 md:py-4  overflow-hidden">
+
+      <div class="h-72 w-full bg-stone-100 animate-pulse  md:rounded-xl "></div>
+    </div>
 
     <div class="pr-6 pl-6">
       <div class="h-16 w-3/4 bg-stone-100 animate-pulse   mt-8"></div>
