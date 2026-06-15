@@ -4,13 +4,13 @@
   <ul class="!list-disc pl-5 space-y-2 text-stone-600 font-outfit marker:text-rose-800">
     @if(recipe()) {
     <li>
-      <p><strong class="text-stone-900 pl-4">Total:</strong> Approximately {{recipe().cooking_time}} minutes</p>
+      <p><strong class="text-stone-900/80 pl-4">Total:</strong> Approximately {{recipe().cooking_time}} minutes</p>
     </li>
     <li>
-      <p><strong class="text-stone-900 pl-4">Preparation:</strong> {{recipe().cooking_time - 10}} minutes</p>
+      <p><strong class="text-stone-900/80 pl-4">Preparation:</strong> {{recipe().cooking_time - 10}} minutes</p>
     </li>
     <li>
-      <p><strong class="text-stone-900 pl-4">Cooking:</strong> {{recipe().cooking_time - 5}} minutes</p>
+      <p><strong class="text-stone-900/80 pl-4">Cooking:</strong> {{recipe().cooking_time - 5}} minutes</p>
     </li>
 
     } @else {
