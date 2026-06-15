@@ -9,13 +9,20 @@
       {{ recipe().title }}
     </h1>
 
+    <p class="w-full pl-8 pr-6 text-stone-700 font-outfit mt-6">
+      An easy and quick dish, perfect for any meal. This classic {{recipe().title.toLowerCase()}} recipe curated by
+      {{recipe().publisher}} combines fresh ingredients cooked to absolute perfection, optimized for your kitchen.
+    </p>
+
   </div>
   } @else {
 
   <div class="w-full">
     <div class="h-72 w-full bg-stone-100 animate-pulse "></div>
 
-    <div class="h-8 w-3/4 bg-stone-100 animate-pulse  ml-8 mt-8"></div>
+    <div class="h-16 w-3/4 bg-stone-100 animate-pulse  ml-8 mt-8"></div>
+
+    <div class="h-24 w-5/6 bg-stone-100 animate-pulse  ml-8 mt-8"></div>
   </div>
 
   }
