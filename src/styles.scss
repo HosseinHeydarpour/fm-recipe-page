@@ -39,6 +39,7 @@
 
 html {
 	scroll-behavior: smooth;
+	height: 100%;
 }
 
 *,
@@ -49,5 +50,7 @@ html {
 }
 
 body {
-	min-height: 100dvh;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }

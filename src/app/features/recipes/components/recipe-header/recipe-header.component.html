@@ -5,14 +5,17 @@
     <img class="h-72 w-full object-cover transition-opacity duration-300" [src]="recipe().image_url"
       [alt]="recipe().title" />
 
-    <h1 class="font-young text-stone-900 pl-8 pr-6 mt-8 text-3xl font-normal leading-tight">
-      {{ recipe().title }}
-    </h1>
+    <div class="pr-4 pl-4">
+      <h1 class="font-young text-stone-900  mt-8 text-3xl font-normal leading-tight">
+        {{ recipe().title }}
+      </h1>
 
-    <p class="w-full pl-8 pr-6 text-stone-700 font-outfit mt-6">
-      An easy and quick dish, perfect for any meal. This classic {{recipe().title.toLowerCase()}} recipe curated by
-      {{recipe().publisher}} combines fresh ingredients cooked to absolute perfection, optimized for your kitchen.
-    </p>
+      <p class="w-full pr-2 text-stone-700 font-outfit mt-6">
+        An easy and quick dish, perfect for any meal. This classic {{recipe().title.toLowerCase()}} recipe curated by
+        {{recipe().publisher}} combines fresh ingredients cooked to absolute perfection, optimized for your kitchen.
+      </p>
+    </div>
+
 
   </div>
   } @else {
@@ -20,9 +23,12 @@
   <div class="w-full">
     <div class="h-72 w-full bg-stone-100 animate-pulse "></div>
 
-    <div class="h-16 w-3/4 bg-stone-100 animate-pulse  ml-8 mt-8"></div>
+    <div class="pr-4 pl-4">
+      <div class="h-16 w-3/4 bg-stone-100 animate-pulse   mt-8"></div>
 
-    <div class="h-24 w-5/6 bg-stone-100 animate-pulse  ml-8 mt-8"></div>
+      <div class="h-24 w-5/6 bg-stone-100 animate-pulse   mt-8"></div>
+    </div>
+
   </div>
 
   }

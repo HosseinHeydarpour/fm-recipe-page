@@ -4,11 +4,12 @@ import { RecipeService } from '../../data-access/recipe.service';
 import { Recipe } from '../../models/recipe.model';
 import { RecipeSummary } from '../../models/recipeSummary.model';
 import { switchMap } from 'rxjs';
+import { PreparationTimeComponent } from '../../components/preparation-time/preparation-time.component';
 
 @Component({
 	selector: 'app-recipe-detail',
 	standalone: true,
-	imports: [RecipeHeaderComponent],
+	imports: [RecipeHeaderComponent, PreparationTimeComponent],
 	templateUrl: './recipe-detail.component.html',
 	styleUrl: './recipe-detail.component.scss',
 })
