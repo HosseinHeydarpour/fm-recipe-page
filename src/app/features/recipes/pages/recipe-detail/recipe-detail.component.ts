@@ -5,11 +5,18 @@ import { Recipe } from '../../models/recipe.model';
 import { RecipeSummary } from '../../models/recipeSummary.model';
 import { switchMap } from 'rxjs';
 import { PreparationTimeComponent } from '../../components/preparation-time/preparation-time.component';
+import { RecipeSectionComponent } from '../../components/recipe-section/recipe-section.component';
+import { NutritionTableComponent } from '../../components/nutrition-table/nutrition-table.component';
 
 @Component({
 	selector: 'app-recipe-detail',
 	standalone: true,
-	imports: [RecipeHeaderComponent, PreparationTimeComponent],
+	imports: [
+		RecipeHeaderComponent,
+		PreparationTimeComponent,
+		RecipeSectionComponent,
+		NutritionTableComponent,
+	],
 	templateUrl: './recipe-detail.component.html',
 	styleUrl: './recipe-detail.component.scss',
 })

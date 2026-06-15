@@ -1,1 +1,99 @@
-<p>recipe-section works!</p>
+<div class="pl-6 pr-6 mb-4 ">
+  <h2 class="text-2xl font-young text-brown-800 leading-tight mt-4 mb-6">Ingredients</h2>
+  <ul
+    class="!list-disc pl-5 space-y-2 text-stone-600 font-outfit marker:text-brown-800 pb-8 border-b border-gray-200  ">
+    @if(recipe()) {
+    @for (ing of recipe()?.ingredients; track $index) {
+    <li>
+      <p class="pl-4">{{ing.description}}</p>
+    </li>
+    }
+
+
+
+    } @else {
+
+
+    <li class="">
+      <p class="flex items-center gap-2 pl-4">
+
+        <span class="inline-block w-40 h-6 bg-stone-100  animate-pulse rounded"></span>
+      </p>
+    </li>
+
+    <li class="">
+      <p class="flex items-center gap-2 pl-4">
+
+        <span class="inline-block w-40 h-6 bg-stone-100  animate-pulse rounded"></span>
+      </p>
+    </li>
+
+    <li class="">
+      <p class="flex items-center gap-2 pl-4">
+
+        <span class="inline-block w-40 h-6 bg-stone-100  animate-pulse rounded"></span>
+      </p>
+    </li>
+
+    }
+  </ul>
+
+  <div class="my-8 font-outfit">
+
+
+    <h2 class="text-2xl font-young text-brown-800 leading-tight mt-4 mb-6">Ingredients</h2>
+
+    <ol
+      class="list-decimal pl-5 space-y-4 text-stone-600 marker:text-brown-800 marker:font-bold marker:font-outfit pb-8 border-b border-gray-200">
+
+      <li class="pl-4">
+        <p class="leading-relaxed">
+          <strong class="text-stone-900 font-bold">Beat the eggs:</strong>
+          In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon
+          of water or milk for a fluffier texture.
+        </p>
+      </li>
+
+      <li class="pl-4">
+        <p class="leading-relaxed">
+          <strong class="text-stone-900 font-bold">Heat the pan:</strong>
+          Place a non-stick frying pan over medium heat and add butter or oil.
+        </p>
+      </li>
+
+      <li class="pl-4">
+        <p class="leading-relaxed">
+          <strong class="text-stone-900 font-bold">Cook the omelette:</strong>
+          Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the
+          surface.
+        </p>
+      </li>
+
+      <li class="pl-4">
+        <p class="leading-relaxed">
+          <strong class="text-stone-900 font-bold">Add fillings (optional):</strong>
+          When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen
+          fillings over one half of the omelette.
+        </p>
+      </li>
+
+      <li class="pl-4">
+        <p class="leading-relaxed">
+          <strong class="text-stone-900 font-bold">Fold and serve:</strong>
+          As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for
+          another minute, then slide it onto a plate.
+        </p>
+      </li>
+
+      <li class="pl-4">
+        <p class="leading-relaxed">
+          <strong class="text-stone-900 font-bold">Enjoy:</strong>
+          Serve hot, with additional salt and pepper if needed.
+        </p>
+      </li>
+
+    </ol>
+  </div>
+
+
+</div>
