@@ -3,8 +3,15 @@
   <div class="relative w-full">
 
     <div class="md:px-4 md:py-4  overflow-hidden">
+      @if(imageNotFound()) {
+      <img class="h-72 w-full object-cover transition-opacity duration-300 md:overflow-hidden md:rounded-xl"
+        [src]="imageSrc()" [alt]="recipe().title" />
+      } @else {
       <img class="h-72 w-full object-cover transition-opacity duration-300 md:overflow-hidden md:rounded-xl"
         [src]="recipe().image_url" [alt]="recipe().title" />
+      }
+
+
     </div>
 
 
@@ -40,6 +47,6 @@
   }
 
   @if (recipe()) {
-  <img class="hidden" [src]="recipe().image_url" (load)="isImageLoaded.set(true)" (error)="handleImageError()" />
+  <img class="hidden" [src]="imageSrc()" (load)="isImageLoaded.set(true)" (error)="handleImageError()" />
   }
 </div>

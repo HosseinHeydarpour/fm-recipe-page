@@ -12,8 +12,13 @@ export class RecipeHeaderComponent {
 	recipe = input.required<Recipe>();
 	isImageLoaded = signal(false);
 	imageSrc = signal<string>('');
+	imageNotFound = signal(false);
 
 	handleImageError() {
+		console.log('triggered');
+
+		this.imageNotFound.set(true);
+
 		// Fallback to a local asset placeholder if Heroku fails
 		this.imageSrc.set('images/fallback.png');
 
